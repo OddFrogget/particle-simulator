@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-weight: bold;
+            font-size: 24px;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+        #game-canvas {
+            border: 1px solid #000;
+        }
+    </style>
+    <title>NIgga</title>
+</head>
+<body>
+    <canvas id="game-canvas"></canvas><br>
+    <label>Increase Base Gravity - W</label><br>
+    <label>Decrease Base Gravity - S</label><br>
+    <label>Enable/Disable Gravity - G</label>
+    <!--<input type="range" min="0" max="10" value="1" id='base-gravity-input'>
+    <input type="checkbox">-->
+
+    <script src="handlers/DebugHandler.js"></script>
+    <script src="handlers/PhysicsHandler.js"></script>
+    <script src="handlers/ParticleHandler.js"></script>
+    <script src="handlers/GameHandler.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
