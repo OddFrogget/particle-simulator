@@ -52,13 +52,6 @@
         };
     //#endregion
     //#region HTMLInput Events
-    /*const baseGravityInput = document.getElementById('base-gravity-input');
-
-    baseGravityInput.onchange = function (input) {
-        const newG = parseInt(baseGravityInput.value);
-
-        gameHandler.setGravity(newG); 
-    }*/
 
     document.addEventListener('keypress', ({ key }) => {
         console.log(gameHandler.baseGravity);
@@ -81,13 +74,15 @@
 
     setInterval(async () => {
         if (isButtonHeld) {
-            particleHandler.spawnPoint(mousePos.x, mousePos.y, 0);
+            const vel0 = 0;
+            const stateI = 1;
+
+            particleHandler.spawnPoint(mousePos.x, mousePos.y, vel0, stateI);
         }
 
         particleHandler.drawPoints();
 
-        if (debugConfig.enableGravity) {
-            await physicsHandler.particleGravity();
-        }
+        physicsHandler.solidBehaviour();
+        physicsHandler.liquidBehaviour();
     }, 1);
 })();

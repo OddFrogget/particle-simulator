@@ -21,11 +21,13 @@ class ParticleHandler {
         });
     }
     
-    spawnPoint(x, y, vi) {
+    spawnPoint(x, y, vi, _state) {
         const type = 'sand';
         const v = vi;
+        const states = ["solid", "liquid"];
+        const state = states[_state];
 
-        const particle = { x, y, vi, v, type };
+        const particle = { x, y, vi, v, type, state };
 
         this.activeParticles.push(particle);
     }
